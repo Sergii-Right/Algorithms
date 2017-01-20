@@ -8,20 +8,31 @@ int main(){
     }
     printf("\n-------------\n");
 
-    //start Stupid Sort
-    int iter = 1;
+    //start Stupid Sort version 1
+//    int iter = 1;
+//    int size_array = sizeof(arr) / sizeof(arr[0]);
+//    while(true){
+//        if(arr[iter] < arr[iter - 1]){
+//            arr[iter] ^= (arr[iter-1] ^= arr[iter]);
+//            arr[iter-1] ^= arr[iter];
+//            iter = 1;
+//        }
+//        else{
+//            iter++;
+//        }
+//        if(iter == size_array){
+//            break;
+//        }
+//    }
+    //stop
+
+    //start Stupid Sort version 2
     int size_array = sizeof(arr) / sizeof(arr[0]);
-    while(true){
-        if(arr[iter] < arr[iter - 1]){
-            arr[iter] ^= (arr[iter-1] ^= arr[iter]);
-            arr[iter-1] ^= arr[iter];
-            iter = 1;
-        }
-        else{
-            iter++;
-        }
-        if(iter == size_array){
-            break;
+    for(int i = 1; i <= size_array; ++i){
+        if(arr[i] < arr[i - 1]){
+            arr[i] ^= (arr[i-1] ^= arr[i]);
+            arr[i-1] ^= arr[i];
+            i = 0;
         }
     }
     //stop
