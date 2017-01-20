@@ -8,7 +8,7 @@ int main(){
     }
     printf("\n-------------\n");
 
-    // start Stupid Sort
+    //start Stupid Sort
     int iter = 1;
     int size_array = sizeof(arr) / sizeof(arr[0]);
     while(true){
