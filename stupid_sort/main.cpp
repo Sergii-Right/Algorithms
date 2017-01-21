@@ -25,10 +25,11 @@ int main(){
 //        }
 //    }
     //stop
-
+    int iter = 0;
     //start Stupid Sort version 2
     int size_array = sizeof(arr) / sizeof(arr[0]);
     for(int i = 1; i <= size_array; ++i){
+        iter++;
         if(arr[i] < arr[i - 1]){
             arr[i] ^= (arr[i-1] ^= arr[i]);
             arr[i-1] ^= arr[i];
@@ -37,6 +38,8 @@ int main(){
     }
     //stop
 
+    printf("iter: %d\n",iter);
+    printf("\n---------\n");
     for(int i : arr){
         printf("%d, ", i);
     }

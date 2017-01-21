@@ -15,6 +15,7 @@ int main()
     srand(time(0));
     int rand_index = 0;
     bool ok = true;
+    int iter = 0;
     int a;
     while(true){
         ok = true;
@@ -23,8 +24,10 @@ int main()
             a = arr[i];
             arr[i] = arr[rand_index];
             arr[rand_index] = a;
+            iter++;
         }
         for(int i = 1; i < size_array; i++){
+            iter++;
             if(arr[i-1] > arr[i]){
                 ok = false;
                 break;
@@ -35,6 +38,8 @@ int main()
         }
     }
 
+    printf("iter: %d\n",iter);
+    printf("\n---------\n");
     for(int i : arr){
         printf("%d, ", i);
     }
