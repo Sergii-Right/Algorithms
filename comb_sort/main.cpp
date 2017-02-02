@@ -35,23 +35,35 @@ int main()
     bool check = true;
     int v = size_array - 1;
     while (check) {
+        check = true;
         for(int i = 0; i < size_array; i+=v){
-            if(arr[i] > arr[v]){
-                std::swap(arr[i], arr[v]);
+            if(arr[i] > arr[i + v]){
+                std::swap(arr[i], arr[i + v]);
+                if(v == 1){
+                    check = false;
+                }
+            }
+            else{
+                if(v == 1){
+                    check = false;
+                }
             }
             iterator++;
         }
-        v = v / 1.247;
         if(v == 1){
-            break;
+//            break;
+        }else{
+            v = v / 1.247;
         }
+
+
     }
 
-    int * a = bubble_sort(arr, size_array, &iterator);
+//    int * a = bubble_sort(arr, size_array, &iterator);
 
     printf("iterator : %d\n--------\n", iterator);
     for(int i = 0; i < size_array; i++){
-        printf("%d, ", a[i]);
+        printf("%d, ", arr[i]);
     }
 
     return 0;
